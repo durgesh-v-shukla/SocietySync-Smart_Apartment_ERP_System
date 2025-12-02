@@ -86,7 +86,7 @@ class AdminDashboard:
                     "Bill Payment Status"
                 )
                 if fig is not None:
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, theme="streamlit")
             else:
                 st.info("No bill statistics available")
         
@@ -100,7 +100,7 @@ class AdminDashboard:
                     "Complaint Status"
                 )
                 if fig is not None:
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, theme="streamlit")
             else:
                 st.info("No complaint statistics available")
         
@@ -327,7 +327,7 @@ class AdminDashboard:
                 })
             
             df = pd.DataFrame(users_data)
-            st.dataframe(df, use_container_width=True)
+            st.dataframe(df, width='stretch')
             
             unchanged = [u for u in users if not u['password_changed']]
             if unchanged:
@@ -857,11 +857,11 @@ class AdminDashboard:
         if status_stats:
             fig = create_pie_chart(status_stats, 'status', 'count', "By Status")
             if fig:
-                col1.plotly_chart(fig, use_container_width=True)
+                col1.plotly_chart(fig, width='stretch')
         if priority_stats:
             fig = create_bar_chart(priority_stats, 'priority', 'count', "By Priority")
             if fig:
-                col2.plotly_chart(fig, use_container_width=True)
+                col2.plotly_chart(fig, width='stretch')
         cursor.close()
     
     def visitor_management(self):
@@ -1567,7 +1567,7 @@ class AdminDashboard:
                             results_df = pd.DataFrame([{'option_text': r[0], 'vote_count': r[1]} for r in results])
                             fig = create_bar_chart(results_df, 'option_text', 'vote_count', f"Results: {poll['title']}")
                             if fig is not None:
-                                st.plotly_chart(fig, use_container_width=True)
+                                st.plotly_chart(fig, use_container_width=True, theme="streamlit")
                 else:
                     st.write("No votes yet")
                 

@@ -38,7 +38,7 @@ class AuthManager:
                 password = st.text_input("🔑 Password", type="password", placeholder="Enter your password", key="login_password")
                 
                 st.markdown("<br>", unsafe_allow_html=True)
-                submit = st.form_submit_button("🚀 Login", use_container_width=True)
+                submit = st.form_submit_button("🚀 Login", width='stretch')
                 
                 if submit:
                     if username and password:
@@ -104,7 +104,7 @@ class AuthManager:
                 new_pw = st.text_input("🔑 New Password", type="password", placeholder="Enter new password (min 6 characters)")
                 confirm_pw = st.text_input("✅ Confirm New Password", type="password", placeholder="Re-enter new password")
                 
-                submit = st.form_submit_button("🔄 Change Password", use_container_width=True)
+                submit = st.form_submit_button("🔄 Change Password", width='stretch')
                 
                 if submit:
                     if not new_pw or not confirm_pw:

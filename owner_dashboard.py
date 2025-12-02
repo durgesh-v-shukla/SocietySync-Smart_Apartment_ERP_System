@@ -62,17 +62,17 @@ class OwnerDashboard:
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            if st.button("💰 Pay Bills", use_container_width=True):
+            if st.button("💰 Pay Bills", width='stretch'):
                 st.session_state.selected_tab = "💰 My Bills"
                 st.rerun()
         
         with col2:
-            if st.button("📝 Raise Complaint", use_container_width=True):
+            if st.button("📝 Raise Complaint", width='stretch'):
                 st.session_state.selected_tab = "📝 My Complaints"
                 st.rerun()
         
         with col3:
-            if st.button("🗳️ Vote in Polls", use_container_width=True):
+            if st.button("🗳️ Vote in Polls", width='stretch'):
                 st.session_state.selected_tab = "🗳️ Polls"
                 st.rerun()
     

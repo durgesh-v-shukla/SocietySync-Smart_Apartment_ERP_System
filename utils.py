@@ -151,9 +151,9 @@ def create_data_table(data, columns=None):
             df['payment_date'] = df['payment_date'].apply(lambda x: format_date(x) if x is not None else 'N/A')
         
         if columns:
-            st.dataframe(df[columns], use_container_width=True)
+            st.dataframe(df[columns], width='stretch')
         else:
-            st.dataframe(df, use_container_width=True)
+            st.dataframe(df, width='stretch')
     except Exception as e:
         st.error(f"Error creating data table: {e}")
 
@@ -306,12 +306,6 @@ def get_flat_display_options():
             # Ensure the mapping is correct
             options[display_text] = flat_num
         
-        # Print first few options for debugging
-        if len(options) > 0:
-            print(f"First 3 flat options:")
-            for i, (display, flat_num) in enumerate(list(options.items())[:3]):
-                print(f"  {i+1}. '{display}' -> '{flat_num}'")
-        
         return options
         
     except Exception as e:
@@ -415,7 +409,7 @@ def create_poll_display(polls, db, user_id):
                 results_df = pd.DataFrame(results, columns=['Option', 'Votes'])
                 fig = create_bar_chart(results_df, 'Option', 'Votes', "Poll Results")
                 if fig:
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True, theme="streamlit")
         else:
             # Show voting options
             cursor.execute("SELECT option_id, option_text FROM poll_options WHERE poll_id = %s", (poll['poll_id'],))
