@@ -148,17 +148,6 @@ class Database:
             )
         """)
         
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS poll_votes (
-                vote_id SERIAL PRIMARY KEY,
-                poll_id INTEGER REFERENCES polls(poll_id) ON DELETE CASCADE,
-                user_id INTEGER REFERENCES users(user_id) ON DELETE CASCADE,
-                option_id INTEGER REFERENCES poll_options(option_id) ON DELETE CASCADE,
-                voted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                UNIQUE(poll_id, user_id)
-            )
-        """)
-        
         # adding visitor photo column
         try:
             cursor.execute("""

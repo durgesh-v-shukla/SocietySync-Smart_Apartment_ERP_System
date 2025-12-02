@@ -50,9 +50,19 @@ CODEBASE_DOCUMENTATION.md
 SQL_QUERIES_REFERENCE.md
 DBMS_CONCEPTS_USED.md
 README_OLD.md
+DATABASE_DESIGN_EXPLANATION.md
+FEATURES_DOCUMENTATION.md
+HOW_TO_RUN.md
+IEEE_TECHNICAL_REPORT.md
+PRESENTATION_CONTENT.md
+TEAM_WORK_DISTRIBUTION.md
 
 # Scripts folder
 scripts/
+
+# Utility scripts
+check_tables.py
+generate_er_diagram.py
 
 # Assets
 assets/
