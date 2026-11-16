@@ -16,7 +16,7 @@
 
 **A normalized relational database-backed ERP system for residential society management — built with Streamlit + PostgreSQL.**
 
-[📖 Setup Guide](SETUP.md) · [📂 Project Structure](PROJECT_STRUCTURE.md) · [📊 Presentation](SocietySyncERP_Presentation.pptx) · [📑 Report](SocietySyncERP_Report.docx) · [📄 Research Paper](https://doi.org/10.46610/IJCSAPL.2026.v02i01.001)
+[📖 Setup Guide](SETUP.md) · [📂 Project Structure](PROJECT_STRUCTURE.md) · [📊 Presentation](SocietySyncERP_Presentation.pptx) · [📑 Report](SocietySyncERP_Report.docx) · [🎥 Video Demo](SocietySyncERP_Walkthrough.mp4) · [📄 Research Paper](https://doi.org/10.46610/IJCSAPL.2026.v02i01.001)
 
 </div>
 

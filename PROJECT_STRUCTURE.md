@@ -50,7 +50,8 @@ SocietySync-Smart_Apartment_ERP_System/
     ├── SETUP.md                    # Full installation & setup guide
     ├── PROJECT_STRUCTURE.md        # This file
     ├── SocietySyncERP_Presentation.pptx # 10-slide academic project presentation
-    └── SocietySyncERP_Report.docx  # Comprehensive academic project report (IEEE-style)
+    ├── SocietySyncERP_Report.docx  # Comprehensive academic project report (IEEE-style)
+    └── SocietySyncERP_Walkthrough.mp4 # Full HD video walkthrough with neural voiceover
 ```
 
 ---
