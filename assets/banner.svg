@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="900" height="180">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="50%" style="stop-color:#1a5276"/>
+      <stop offset="100%" style="stop-color:#0d2137"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title { font: bold 38px 'Segoe UI', sans-serif; fill: #ffffff; letter-spacing: -1px; }
+      .sub   { font: 16px 'Segoe UI', sans-serif; fill: #94a3b8; }
+      .badge { font: bold 11px 'Segoe UI', sans-serif; fill: #ffffff; }
+      .dot   { animation: pulse 2s ease-in-out infinite; }
+      @keyframes pulse {
+        0%,100% { opacity:1; r:4; }
+        50%      { opacity:0.4; r:6; }
+      }
+      .line-anim { stroke-dasharray: 200; stroke-dashoffset: 200; animation: dash 3s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -200; } }
+      .fade-in { animation: fadeIn 1.2s ease forwards; }
+      @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+      .shimmer { animation: shimmer 3s linear infinite; }
+      @keyframes shimmer {
+        0%   { stop-color:#3b82f6; }
+        50%  { stop-color:#22c55e; }
+        100% { stop-color:#3b82f6; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="180" fill="url(#bg)" rx="12"/>
+
+  <!-- Animated grid lines -->
+  <g opacity="0.08">
+    <line x1="150" y1="0" x2="150" y2="180" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="180" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="450" y1="0" x2="450" y2="180" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="180" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="750" y1="0" x2="750" y2="180" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="900" y2="60" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="900" y2="120" stroke="#ffffff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Animated accent bar -->
+  <rect x="0" y="0" width="900" height="4" rx="2">
+    <animate attributeName="fill" values="#3b82f6;#22c55e;#f59e0b;#3b82f6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Animated data flow dots -->
+  <circle class="dot" cx="50" cy="90" r="4" fill="#3b82f6" style="animation-delay:0s"/>
+  <circle class="dot" cx="80" cy="90" r="4" fill="#22c55e" style="animation-delay:0.4s"/>
+  <circle class="dot" cx="110" cy="90" r="4" fill="#f59e0b" style="animation-delay:0.8s"/>
+
+  <!-- Animated connecting line -->
+  <line x1="130" y1="90" x2="195" y2="90" stroke="#3b82f6" stroke-width="1.5" opacity="0.4" class="line-anim"/>
+
+  <!-- Main title -->
+  <g class="fade-in">
+    <text x="210" y="75" class="title">SocietySyncERP</text>
+    <text x="212" y="102" class="sub">Smart Apartment Management System  ·  Streamlit + PostgreSQL</text>
+    <!-- Accent underline -->
+    <rect x="210" y="108" width="420" height="2" rx="1" fill="url(#accent)"/>
+  </g>
+
+  <!-- Research paper badge -->
+  <g transform="translate(210,122)" class="fade-in" style="animation-delay:0.3s">
+    <rect width="200" height="22" rx="11" fill="#1e40af" opacity="0.8"/>
+    <text x="12" y="15" class="badge">📄 Published Research Paper</text>
+  </g>
+  <g transform="translate(422,122)" class="fade-in" style="animation-delay:0.5s">
+    <rect width="140" height="22" rx="11" fill="#166534" opacity="0.8"/>
+    <text x="12" y="15" class="badge">🔬 DOI: 10.46610</text>
+  </g>
+  <g transform="translate(574,122)" class="fade-in" style="animation-delay:0.7s">
+    <rect width="120" height="22" rx="11" fill="#7c3aed" opacity="0.8"/>
+    <text x="12" y="15" class="badge">🏛️ VIT Pune</text>
+  </g>
+
+  <!-- Right side: animated nodes -->
+  <g transform="translate(760,40)">
+    <circle cx="30" cy="30" r="22" fill="#1e40af" opacity="0.6"/>
+    <text x="30" y="35" text-anchor="middle" font-size="20">🏢</text>
+    <circle cx="90" cy="30" r="22" fill="#166534" opacity="0.6"/>
+    <text x="90" y="35" text-anchor="middle" font-size="20">🗄️</text>
+    <line x1="52" y1="30" x2="68" y2="30" stroke="#94a3b8" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="30" cy="90" r="22" fill="#92400e" opacity="0.6"/>
+    <text x="30" y="95" text-anchor="middle" font-size="20">🔐</text>
+    <circle cx="90" cy="90" r="22" fill="#7c3aed" opacity="0.6"/>
+    <text x="90" y="95" text-anchor="middle" font-size="20">📊</text>
+    <line x1="52" y1="90" x2="68" y2="90" stroke="#94a3b8" stroke-width="1.5">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="176" width="900" height="4" rx="2" fill="#1e3a5f"/>
+</svg>
